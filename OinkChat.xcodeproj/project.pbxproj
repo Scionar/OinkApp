@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E191328929FD890F0023C57C /* OinkChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E191328829FD890F0023C57C /* OinkChatApp.swift */; };
+		E191328B29FD890F0023C57C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E191328A29FD890F0023C57C /* ContentView.swift */; };
+		E191328D29FD89100023C57C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E191328C29FD89100023C57C /* Assets.xcassets */; };
+		E191329029FD89100023C57C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E191328F29FD89100023C57C /* Preview Assets.xcassets */; };
+		E191329A29FD89100023C57C /* OinkChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E191329929FD89100023C57C /* OinkChatTests.swift */; };
+		E19132A429FD89100023C57C /* OinkChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19132A329FD89100023C57C /* OinkChatUITests.swift */; };
+		E19132A629FD89100023C57C /* OinkChatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19132A529FD89100023C57C /* OinkChatUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E191329629FD89100023C57C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E191327D29FD890F0023C57C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E191328429FD890F0023C57C;
+			remoteInfo = OinkChat;
+		};
+		E19132A029FD89100023C57C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E191327D29FD890F0023C57C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E191328429FD890F0023C57C;
+			remoteInfo = OinkChat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E191328529FD890F0023C57C /* OinkChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OinkChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E191328829FD890F0023C57C /* OinkChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OinkChatApp.swift; sourceTree = "<group>"; };
+		E191328A29FD890F0023C57C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E191328C29FD89100023C57C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E191328F29FD89100023C57C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E191329529FD89100023C57C /* OinkChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OinkChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E191329929FD89100023C57C /* OinkChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OinkChatTests.swift; sourceTree = "<group>"; };
+		E191329F29FD89100023C57C /* OinkChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OinkChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E19132A329FD89100023C57C /* OinkChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OinkChatUITests.swift; sourceTree = "<group>"; };
+		E19132A529FD89100023C57C /* OinkChatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OinkChatUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E191328229FD890F0023C57C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E191329229FD89100023C57C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E191329C29FD89100023C57C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E191327C29FD890F0023C57C = {
+			isa = PBXGroup;
+			children = (
+				E191328729FD890F0023C57C /* OinkChat */,
+				E191329829FD89100023C57C /* OinkChatTests */,
+				E19132A229FD89100023C57C /* OinkChatUITests */,
+				E191328629FD890F0023C57C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E191328629FD890F0023C57C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E191328529FD890F0023C57C /* OinkChat.app */,
+				E191329529FD89100023C57C /* OinkChatTests.xctest */,
+				E191329F29FD89100023C57C /* OinkChatUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E191328729FD890F0023C57C /* OinkChat */ = {
+			isa = PBXGroup;
+			children = (
+				E191328829FD890F0023C57C /* OinkChatApp.swift */,
+				E191328A29FD890F0023C57C /* ContentView.swift */,
+				E191328C29FD89100023C57C /* Assets.xcassets */,
+				E191328E29FD89100023C57C /* Preview Content */,
+			);
+			path = OinkChat;
+			sourceTree = "<group>";
+		};
+		E191328E29FD89100023C57C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E191328F29FD89100023C57C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E191329829FD89100023C57C /* OinkChatTests */ = {
+			isa = PBXGroup;
+			children = (
+				E191329929FD89100023C57C /* OinkChatTests.swift */,
+			);
+			path = OinkChatTests;
+			sourceTree = "<group>";
+		};
+		E19132A229FD89100023C57C /* OinkChatUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E19132A329FD89100023C57C /* OinkChatUITests.swift */,
+				E19132A529FD89100023C57C /* OinkChatUITestsLaunchTests.swift */,
+			);
+			path = OinkChatUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E191328429FD890F0023C57C /* OinkChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E19132A929FD89100023C57C /* Build configuration list for PBXNativeTarget "OinkChat" */;
+			buildPhases = (
+				E191328129FD890F0023C57C /* Sources */,
+				E191328229FD890F0023C57C /* Frameworks */,
+				E191328329FD890F0023C57C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OinkChat;
+			productName = OinkChat;
+			productReference = E191328529FD890F0023C57C /* OinkChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E191329429FD89100023C57C /* OinkChatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E19132AC29FD89100023C57C /* Build configuration list for PBXNativeTarget "OinkChatTests" */;
+			buildPhases = (
+				E191329129FD89100023C57C /* Sources */,
+				E191329229FD89100023C57C /* Frameworks */,
+				E191329329FD89100023C57C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E191329729FD89100023C57C /* PBXTargetDependency */,
+			);
+			name = OinkChatTests;
+			productName = OinkChatTests;
+			productReference = E191329529FD89100023C57C /* OinkChatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E191329E29FD89100023C57C /* OinkChatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E19132AF29FD89100023C57C /* Build configuration list for PBXNativeTarget "OinkChatUITests" */;
+			buildPhases = (
+				E191329B29FD89100023C57C /* Sources */,
+				E191329C29FD89100023C57C /* Frameworks */,
+				E191329D29FD89100023C57C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E19132A129FD89100023C57C /* PBXTargetDependency */,
+			);
+			name = OinkChatUITests;
+			productName = OinkChatUITests;
+			productReference = E191329F29FD89100023C57C /* OinkChatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E191327D29FD890F0023C57C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					E191328429FD890F0023C57C = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					E191329429FD89100023C57C = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = E191328429FD890F0023C57C;
+					};
+					E191329E29FD89100023C57C = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = E191328429FD890F0023C57C;
+					};
+				};
+			};
+			buildConfigurationList = E191328029FD890F0023C57C /* Build configuration list for PBXProject "OinkChat" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E191327C29FD890F0023C57C;
+			productRefGroup = E191328629FD890F0023C57C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E191328429FD890F0023C57C /* OinkChat */,
+				E191329429FD89100023C57C /* OinkChatTests */,
+				E191329E29FD89100023C57C /* OinkChatUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E191328329FD890F0023C57C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E191329029FD89100023C57C /* Preview Assets.xcassets in Resources */,
+				E191328D29FD89100023C57C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E191329329FD89100023C57C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E191329D29FD89100023C57C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E191328129FD890F0023C57C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E191328B29FD890F0023C57C /* ContentView.swift in Sources */,
+				E191328929FD890F0023C57C /* OinkChatApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E191329129FD89100023C57C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E191329A29FD89100023C57C /* OinkChatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E191329B29FD89100023C57C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E19132A629FD89100023C57C /* OinkChatUITestsLaunchTests.swift in Sources */,
+				E19132A429FD89100023C57C /* OinkChatUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E191329729FD89100023C57C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E191328429FD890F0023C57C /* OinkChat */;
+			targetProxy = E191329629FD89100023C57C /* PBXContainerItemProxy */;
+		};
+		E19132A129FD89100023C57C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E191328429FD890F0023C57C /* OinkChat */;
+			targetProxy = E19132A029FD89100023C57C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E19132A729FD89100023C57C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E19132A829FD89100023C57C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E19132AA29FD89100023C57C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"OinkChat/Preview Content\"";
+				DEVELOPMENT_TEAM = 56A53222BW;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oink.OinkChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E19132AB29FD89100023C57C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"OinkChat/Preview Content\"";
+				DEVELOPMENT_TEAM = 56A53222BW;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oink.OinkChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E19132AD29FD89100023C57C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 56A53222BW;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oink.OinkChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OinkChat.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OinkChat";
+			};
+			name = Debug;
+		};
+		E19132AE29FD89100023C57C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 56A53222BW;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oink.OinkChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OinkChat.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OinkChat";
+			};
+			name = Release;
+		};
+		E19132B029FD89100023C57C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 56A53222BW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oink.OinkChatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OinkChat;
+			};
+			name = Debug;
+		};
+		E19132B129FD89100023C57C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 56A53222BW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oink.OinkChatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OinkChat;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E191328029FD890F0023C57C /* Build configuration list for PBXProject "OinkChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E19132A729FD89100023C57C /* Debug */,
+				E19132A829FD89100023C57C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E19132A929FD89100023C57C /* Build configuration list for PBXNativeTarget "OinkChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E19132AA29FD89100023C57C /* Debug */,
+				E19132AB29FD89100023C57C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E19132AC29FD89100023C57C /* Build configuration list for PBXNativeTarget "OinkChatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E19132AD29FD89100023C57C /* Debug */,
+				E19132AE29FD89100023C57C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E19132AF29FD89100023C57C /* Build configuration list for PBXNativeTarget "OinkChatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E19132B029FD89100023C57C /* Debug */,
+				E19132B129FD89100023C57C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E191327D29FD890F0023C57C /* Project object */;
+}
