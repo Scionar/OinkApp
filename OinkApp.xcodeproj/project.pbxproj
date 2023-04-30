@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E191328929FD890F0023C57C /* OinkChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E191328829FD890F0023C57C /* OinkChatApp.swift */; };
+		E191328929FD890F0023C57C /* OinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E191328829FD890F0023C57C /* OinkApp.swift */; };
 		E191328D29FD89100023C57C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E191328C29FD89100023C57C /* Assets.xcassets */; };
 		E191329029FD89100023C57C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E191328F29FD89100023C57C /* Preview Assets.xcassets */; };
-		E191329A29FD89100023C57C /* OinkChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E191329929FD89100023C57C /* OinkChatTests.swift */; };
-		E19132A429FD89100023C57C /* OinkChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19132A329FD89100023C57C /* OinkChatUITests.swift */; };
-		E19132A629FD89100023C57C /* OinkChatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19132A529FD89100023C57C /* OinkChatUITestsLaunchTests.swift */; };
 		E1F69CC229FD9D13006E59E2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F69CC129FD9D13006E59E2 /* MainView.swift */; };
 		E1F69CC429FDA314006E59E2 /* ChannelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F69CC329FDA314006E59E2 /* ChannelListView.swift */; };
 		E1F69CC629FDA4C1006E59E2 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F69CC529FDA4C1006E59E2 /* Helper.swift */; };
@@ -42,14 +39,11 @@
 
 /* Begin PBXFileReference section */
 		E191328529FD890F0023C57C /* OinkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OinkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E191328829FD890F0023C57C /* OinkChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OinkChatApp.swift; sourceTree = "<group>"; };
+		E191328829FD890F0023C57C /* OinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OinkApp.swift; sourceTree = "<group>"; };
 		E191328C29FD89100023C57C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E191328F29FD89100023C57C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E191329529FD89100023C57C /* OinkAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OinkAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E191329929FD89100023C57C /* OinkChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OinkChatTests.swift; sourceTree = "<group>"; };
 		E191329F29FD89100023C57C /* OinkAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OinkAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E19132A329FD89100023C57C /* OinkChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OinkChatUITests.swift; sourceTree = "<group>"; };
-		E19132A529FD89100023C57C /* OinkChatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OinkChatUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E1F69CC129FD9D13006E59E2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E1F69CC329FDA314006E59E2 /* ChannelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListView.swift; sourceTree = "<group>"; };
 		E1F69CC529FDA4C1006E59E2 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
@@ -88,9 +82,7 @@
 		E191327C29FD890F0023C57C = {
 			isa = PBXGroup;
 			children = (
-				E191328729FD890F0023C57C /* OinkChat */,
-				E191329829FD89100023C57C /* OinkChatTests */,
-				E19132A229FD89100023C57C /* OinkChatUITests */,
+				E191328729FD890F0023C57C /* OinkApp */,
 				E191328629FD890F0023C57C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,10 +97,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E191328729FD890F0023C57C /* OinkChat */ = {
+		E191328729FD890F0023C57C /* OinkApp */ = {
 			isa = PBXGroup;
 			children = (
-				E191328829FD890F0023C57C /* OinkChatApp.swift */,
+				E191328829FD890F0023C57C /* OinkApp.swift */,
 				E1F69CC129FD9D13006E59E2 /* MainView.swift */,
 				E1F69CCF29FDADF3006E59E2 /* ChannelItemRow.swift */,
 				E191328C29FD89100023C57C /* Assets.xcassets */,
@@ -120,7 +112,7 @@
 				E1F69CCB29FDABF4006E59E2 /* BrowseView.swift */,
 				E1F69CCD29FDAC14006E59E2 /* MeView.swift */,
 			);
-			path = OinkChat;
+			path = OinkApp;
 			sourceTree = "<group>";
 		};
 		E191328E29FD89100023C57C /* Preview Content */ = {
@@ -129,23 +121,6 @@
 				E191328F29FD89100023C57C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		E191329829FD89100023C57C /* OinkChatTests */ = {
-			isa = PBXGroup;
-			children = (
-				E191329929FD89100023C57C /* OinkChatTests.swift */,
-			);
-			path = OinkChatTests;
-			sourceTree = "<group>";
-		};
-		E19132A229FD89100023C57C /* OinkChatUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E19132A329FD89100023C57C /* OinkChatUITests.swift */,
-				E19132A529FD89100023C57C /* OinkChatUITestsLaunchTests.swift */,
-			);
-			path = OinkChatUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,7 +261,7 @@
 				E1F69CCE29FDAC14006E59E2 /* MeView.swift in Sources */,
 				E1F69CC629FDA4C1006E59E2 /* Helper.swift in Sources */,
 				E1F69CC229FD9D13006E59E2 /* MainView.swift in Sources */,
-				E191328929FD890F0023C57C /* OinkChatApp.swift in Sources */,
+				E191328929FD890F0023C57C /* OinkApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +269,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E191329A29FD89100023C57C /* OinkChatTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,8 +276,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E19132A629FD89100023C57C /* OinkChatUITestsLaunchTests.swift in Sources */,
-				E19132A429FD89100023C57C /* OinkChatUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +416,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"OinkChat/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"OinkApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 56A53222BW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -472,7 +444,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"OinkChat/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"OinkApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 56A53222BW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
