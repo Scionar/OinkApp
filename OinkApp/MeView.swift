@@ -258,7 +258,7 @@ struct PostView: View {
             
             VStack(alignment: .leading, spacing: 10, content: {
                 (
-                    Text("Piggy")
+                    Text("Piggy ")
                         .fontWeight(.bold)
                         .foregroundColor(.primary)
                     
