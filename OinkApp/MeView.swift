@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct MeView: View {
+    
+    @Environment(\.colorScheme) var colorScheme
+    
     @State var offset: CGFloat = 0
     @State var tabBarOffset: CGFloat = 0
     @State var currentTab = "Posts"
     
     @Namespace var animation
+    
+    @State var headerTitleOffset: CGFloat = 0;
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false, content: {
@@ -35,9 +40,23 @@ struct MeView: View {
 
                             BlurView()
                                 .opacity(blurViewOpacity())
+                            
+                            // Header title
+                            VStack(spacing: 5) {
+                                Text("Piggy")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                
+                                Text("150 Posts")
+                                    .foregroundColor(.white)
+                            }
+                            .offset(y: 120)
+                            .offset(y: headerTitleOffset > 100 ? 0 : -getHeaderTitleOffset())
+                            .opacity(headerTitleOffset < 110 ? 1 : 0)
                         }
-                        .frame(height: minY > 0 ? 180 + minY : nil)
-                        .offset(y: minY > 0 ? -minY : -minY < 80 ? 0 : -minY - 80)
+                            .clipped()
+                            .frame(height: minY > 0 ? 180 + minY : nil)
+                            .offset(y: minY > 0 ? -minY : -minY < 80 ? 0 : -minY - 80)
                     )
                 }
                 .frame(height: 180)
@@ -52,7 +71,7 @@ struct MeView: View {
                             .frame(width: 75, height: 75)
                             .clipShape(Circle())
                             .padding(5)
-                            .background(Color.white)
+                            .background(colorScheme == .dark ? Color.black : Color.white)
                             .clipShape(Circle())
                             .offset(y: offset < 0 ? getOffset() - 20 : -20)
                             .offset(x: -5)
@@ -86,6 +105,18 @@ struct MeView: View {
                         
                         Text("Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.")
                     })
+                    .overlay(
+                        GeometryReader{proxy -> Color in
+                            let minY = proxy.frame(in: .global).minY
+                            
+                            DispatchQueue.main.async {
+                                self.headerTitleOffset = minY
+                            }
+                            
+                            return Color.clear
+                        }.frame(width: 0, height: 0),
+                        alignment: .top
+                    )
                     
                     // Segmented menu
                     VStack(spacing: 0) {
@@ -104,8 +135,8 @@ struct MeView: View {
                         Divider()
                     }
                     .padding(.top, 30)
-                    .background(Color.white)
-                    .offset(y: tabBarOffset < 110 ? -tabBarOffset + 110 : 0)
+                    .background(colorScheme == .dark ? Color.black : Color.white)
+                    .offset(y: tabBarOffset < 80 ? -tabBarOffset + 80 : 0)
                     .overlay(
                         GeometryReader{reader -> Color in
                             let minY = reader.frame(in: .global).minY
@@ -115,7 +146,8 @@ struct MeView: View {
                             }
                             
                             return Color.clear
-                        }.frame(width: 0, height: 0, alignment: .top)
+                        }.frame(width: 0, height: 0),
+                        alignment: .top
                     )
                     .zIndex(1)
                     
@@ -143,6 +175,12 @@ struct MeView: View {
             }
         })
         .ignoresSafeArea(.all, edges: .top)
+    }
+    
+    func getHeaderTitleOffset()->CGFloat {
+        let progress = 20 / headerTitleOffset
+        let offset = 60 * (progress > 0 && progress <= 1 ? progress : 1)
+        return offset
     }
 
     // Profile shrinking effect
