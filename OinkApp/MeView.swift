@@ -155,12 +155,12 @@ struct MeView: View {
                     
                     // Posts
                     VStack(spacing: 18) {
-                        PostView(post: "Today I went to a pizza buffet! 🍕🍕 So awesome andfilling.", postImage: "veggie-pizza")
+                        PostBox(post: "Today I went to a pizza buffet! 🍕🍕 So awesome andfilling.", postImage: "veggie-pizza")
                         
                         Divider()
                         
                         ForEach(1...20, id: \.self) {_ in
-                            PostView(post: "Today I went to a pizza buffet! 🍕🍕 So awesome andfilling.")
+                            PostBox(post: "Today I went to a pizza buffet! 🍕🍕 So awesome andfilling.")
                             Divider()
                         }
                     }
@@ -241,48 +241,5 @@ struct TabButton: View {
                 }
             }
         })
-    }
-}
-
-struct PostView: View {
-    var post: String
-    var postImage: String?
-    
-    var body: some View {
-        HStack(alignment: .top, spacing: 10, content: {
-            Image("pig")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 55, height: 55)
-                .clipShape(Circle())
-            
-            VStack(alignment: .leading, spacing: 10, content: {
-                (
-                    Text("Piggy ")
-                        .fontWeight(.bold)
-                        .foregroundColor(.primary)
-                    
-                    +
-                    
-                    Text("@piggy5000")
-                        .foregroundColor(.gray)
-                )
-                
-                Text(post)
-                    .frame(maxHeight: 100, alignment: .top)
-                
-                if let image = postImage {
-                    GeometryReader{proxy in
-                        Image(image)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: proxy.frame(in: .global).width, height: 250)
-                            .cornerRadius(15)
-                    }
-                    .frame(height: 250)
-                }
-            })
-        }).frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-            .padding(.horizontal)
     }
 }
