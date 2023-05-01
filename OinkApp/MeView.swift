@@ -9,6 +9,9 @@ import SwiftUI
 
 struct MeView: View {
     @State var offset: CGFloat = 0
+    @State var currentTab = "Posts"
+    
+    @Namespace var animation
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false, content: {
@@ -41,15 +44,17 @@ struct MeView: View {
 
                 VStack{
                     HStack {
+                        // Avatar
                         Image("pig")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 75, height: 75)
                             .clipShape(Circle())
-                            .padding(8)
+                            .padding(5)
                             .background(Color.white)
                             .clipShape(Circle())
                             .offset(y: offset < 0 ? getOffset() - 20 : -20)
+                            .offset(x: -5)
                             .scaleEffect(getScale())
 
                         Spacer()
@@ -63,10 +68,47 @@ struct MeView: View {
                                     Capsule().stroke(Color.blue, lineWidth: 1.5)
                                 )
                         })
-                    }.padding(.top, -25)
+                    }
+                    .padding(.top, -25)
+                    .padding(.bottom, -10)
+                    
+                    // Profile description
+                    VStack(alignment: .leading, spacing: 8, content: {
+                        Text("Piggy")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundColor(.primary)
+                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                        
+                        Text("@piggy5000")
+                            .foregroundColor(.gray)
+                        
+                        Text("Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.")
+                    })
+                    
+                    // Segmented menu
+                    VStack(spacing: 0){
+                        ScrollView(.horizontal, showsIndicators: false, content: {
+                            HStack(spacing: 0){
+                                TabButton(title: "Posts", currentTab: $currentTab, animation: animation)
+                                
+                                TabButton(title: "Media", currentTab: $currentTab, animation: animation)
+                                
+                                TabButton(title: "Likes", currentTab: $currentTab, animation: animation)
+                                
+                                TabButton(title: "Calories", currentTab: $currentTab, animation: animation)
+                            }
+                        })
+                        
+                        Divider()
+                    }
+                    .padding(.top, 20)
                 }
                 .padding(.horizontal)
+                // Move view behind header if it goes > 80.
                 .zIndex(-offset > 80 ? 0 : 1)
+                
+                
 
             }
         })
@@ -100,5 +142,37 @@ struct MeView_Previews: PreviewProvider {
 extension View {
     func getRect()->CGRect{
         return UIScreen.main.bounds
+    }
+}
+
+struct TabButton: View {
+    var title: String
+    @Binding var currentTab: String
+    var animation: Namespace.ID
+    
+    var body: some View {
+        Button(action: {
+            withAnimation {
+                currentTab = title
+            }
+        }, label:  {
+            LazyVStack(spacing: 12) {
+                Text(title)
+                    .fontWeight(.semibold)
+                    .foregroundColor(currentTab == title ? .blue : .gray)
+                    .padding(.horizontal)
+                
+                if currentTab == title {
+                    Capsule()
+                        .fill(Color.blue)
+                        .frame(height: 1.2)
+                        .matchedGeometryEffect(id: "TAB", in: animation)
+                } else {
+                    Capsule()
+                        .fill(Color.clear)
+                        .frame(height: 1.2)
+                }
+            }
+        })
     }
 }
