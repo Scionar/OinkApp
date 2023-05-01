@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MeView: View {
     @State var offset: CGFloat = 0
+    @State var tabBarOffset: CGFloat = 0
     @State var currentTab = "Posts"
     
     @Namespace var animation
@@ -87,7 +88,7 @@ struct MeView: View {
                     })
                     
                     // Segmented menu
-                    VStack(spacing: 0){
+                    VStack(spacing: 0) {
                         ScrollView(.horizontal, showsIndicators: false, content: {
                             HStack(spacing: 0){
                                 TabButton(title: "Posts", currentTab: $currentTab, animation: animation)
@@ -102,10 +103,24 @@ struct MeView: View {
                         
                         Divider()
                     }
-                    .padding(.top, 20)
+                    .padding(.top, 30)
+                    .background(Color.white)
+                    .offset(y: tabBarOffset < 110 ? -tabBarOffset + 110 : 0)
+                    .overlay(
+                        GeometryReader{reader -> Color in
+                            let minY = reader.frame(in: .global).minY
+                            
+                            DispatchQueue.main.async {
+                                self.tabBarOffset = minY
+                            }
+                            
+                            return Color.clear
+                        }.frame(width: 0, height: 0, alignment: .top)
+                    )
+                    .zIndex(1)
                     
+                    // Posts
                     VStack(spacing: 18) {
-                        // Post
                         PostView(post: "Today I went to a pizza buffet! 🍕🍕 So awesome andfilling.", postImage: "veggie-pizza")
                         
                         Divider()
@@ -115,6 +130,7 @@ struct MeView: View {
                             Divider()
                         }
                     }
+                    .zIndex(0)
                     
                     
                 }
