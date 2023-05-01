@@ -63,8 +63,8 @@ struct MeView: View {
                 .zIndex(1)
 
                 VStack{
+                    // Avatar & edit button
                     HStack {
-                        // Avatar
                         Image("pig")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
@@ -91,6 +91,7 @@ struct MeView: View {
                     }
                     .padding(.top, -25)
                     .padding(.bottom, -10)
+                    .padding(.horizontal)
                     
                     // Profile description
                     VStack(alignment: .leading, spacing: 8, content: {
@@ -117,6 +118,7 @@ struct MeView: View {
                         }.frame(width: 0, height: 0),
                         alignment: .top
                     )
+                    .padding(.horizontal)
                     
                     // Segmented menu
                     VStack(spacing: 0) {
@@ -163,10 +165,7 @@ struct MeView: View {
                         }
                     }
                     .zIndex(0)
-                    
-                    
                 }
-                .padding(.horizontal)
                 // Move view behind header if it goes > 80.
                 .zIndex(-offset > 80 ? 0 : 1)
                 
@@ -284,5 +283,6 @@ struct PostView: View {
                 }
             })
         }).frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal)
     }
 }
