@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E10012A729FE7753000242F4 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10012A629FE7753000242F4 /* BlurView.swift */; };
 		E191328929FD890F0023C57C /* OinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E191328829FD890F0023C57C /* OinkApp.swift */; };
 		E191328D29FD89100023C57C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E191328C29FD89100023C57C /* Assets.xcassets */; };
 		E191329029FD89100023C57C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E191328F29FD89100023C57C /* Preview Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E10012A629FE7753000242F4 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		E191328529FD890F0023C57C /* OinkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OinkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E191328829FD890F0023C57C /* OinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OinkApp.swift; sourceTree = "<group>"; };
 		E191328C29FD89100023C57C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				E1F69CC929FDA6B4006E59E2 /* Menu.swift */,
 				E1F69CCB29FDABF4006E59E2 /* BrowseView.swift */,
 				E1F69CCD29FDAC14006E59E2 /* MeView.swift */,
+				E10012A629FE7753000242F4 /* BlurView.swift */,
 			);
 			path = OinkApp;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				E1F69CCA29FDA6B4006E59E2 /* Menu.swift in Sources */,
 				E1F69CCC29FDABF4006E59E2 /* BrowseView.swift in Sources */,
 				E1F69CCE29FDAC14006E59E2 /* MeView.swift in Sources */,
+				E10012A729FE7753000242F4 /* BlurView.swift in Sources */,
 				E1F69CC629FDA4C1006E59E2 /* Helper.swift in Sources */,
 				E1F69CC229FD9D13006E59E2 /* MainView.swift in Sources */,
 				E191328929FD890F0023C57C /* OinkApp.swift in Sources */,

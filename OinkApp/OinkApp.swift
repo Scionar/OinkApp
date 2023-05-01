@@ -1,6 +1,6 @@
 //
-//  OinkChatApp.swift
-//  OinkChat
+//  OinkApp.swift
+//  OinkApp
 //
 //  Created by Joona Viertola on 29.4.2023.
 //
