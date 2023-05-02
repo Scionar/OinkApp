@@ -18,6 +18,8 @@ struct MeView: View {
     @Namespace var animation
     
     @State var headerTitleOffset: CGFloat = 0;
+    
+    var safeArea: EdgeInsets
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false, content: {
@@ -60,6 +62,7 @@ struct MeView: View {
                     )
                 }
                 .frame(height: 180)
+                .coordinateSpace(name: "SCROLL")
                 .zIndex(1)
 
                 VStack{
@@ -120,37 +123,29 @@ struct MeView: View {
                     )
                     .padding(.horizontal)
                     
-                    // Segmented menu
-                    VStack(spacing: 0) {
-                        ScrollView(.horizontal, showsIndicators: false, content: {
-                            HStack(spacing: 0){
-                                TabButton(title: "Posts", currentTab: $currentTab, animation: animation)
-                                
-                                TabButton(title: "Media", currentTab: $currentTab, animation: animation)
-                                
-                                TabButton(title: "Likes", currentTab: $currentTab, animation: animation)
-                                
-                                TabButton(title: "Calories", currentTab: $currentTab, animation: animation)
-                            }
-                        })
+                    GeometryReader{ proxy in
+                        let minY = proxy.frame(in: .named("SCROLL")).minY - 50
                         
-                        Divider()
+                        VStack(spacing: 0) {
+                            ScrollView(.horizontal, showsIndicators: false, content: {
+                                HStack(spacing: 0){
+                                    TabButton(title: "Posts", currentTab: $currentTab, animation: animation)
+    
+                                    TabButton(title: "Media", currentTab: $currentTab, animation: animation)
+    
+                                    TabButton(title: "Likes", currentTab: $currentTab, animation: animation)
+    
+                                    TabButton(title: "Calories", currentTab: $currentTab, animation: animation)
+                                }
+                            })
+    
+                            Divider()
+                        }
+                        .background(colorScheme == .dark ? Color.black : Color.white)
+                        .frame(maxWidth: .infinity, maxHeight: 50)
+                        .offset(y: minY < 50 ? -(minY - 50) : 0)
                     }
-                    .padding(.top, 30)
-                    .background(colorScheme == .dark ? Color.black : Color.white)
-                    .offset(y: tabBarOffset < 80 ? -tabBarOffset + 80 : 0)
-                    .overlay(
-                        GeometryReader{reader -> Color in
-                            let minY = reader.frame(in: .global).minY
-                            
-                            DispatchQueue.main.async {
-                                self.tabBarOffset = minY
-                            }
-                            
-                            return Color.clear
-                        }.frame(width: 0, height: 0),
-                        alignment: .top
-                    )
+                    .frame(height: 50)
                     .zIndex(1)
                     
                     // Posts
@@ -202,7 +197,11 @@ struct MeView: View {
 
 struct MeView_Previews: PreviewProvider {
     static var previews: some View {
-        MeView()
+        GeometryReader {
+            let safeArea = $0.safeAreaInsets
+            
+            MeView(safeArea: safeArea)
+        }
     }
 }
 
@@ -223,11 +222,13 @@ struct TabButton: View {
                 currentTab = title
             }
         }, label:  {
-            LazyVStack(spacing: 12) {
+            LazyVStack(spacing: 0) {
                 Text(title)
                     .fontWeight(.semibold)
                     .foregroundColor(currentTab == title ? .blue : .gray)
                     .padding(.horizontal)
+                    .padding(.vertical, 15)
+                    .frame(height: 49)
                 
                 if currentTab == title {
                     Capsule()
@@ -240,6 +241,7 @@ struct TabButton: View {
                         .frame(height: 1.2)
                 }
             }
+            .frame(height: 50)
         })
     }
 }
