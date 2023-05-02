@@ -14,12 +14,12 @@ struct MainView: View {
 
             TabView() {
                 BrowseView().tabItem {
-                    Label("Browse", systemImage: "person.2.fill")
+                    Label("Browse", systemImage: "globe.europe.africa.fill")
                 }
                 ChannelListView()
                     .badge(3)
                     .tabItem {
-                        Label("Channels", systemImage: "bubble.right.fill")
+                        Label("Following", systemImage: "person.2.fill")
                     }
                 MeView(safeArea: safeArea).tabItem {
                     Label("Profile", systemImage: "person.crop.circle.fill")
