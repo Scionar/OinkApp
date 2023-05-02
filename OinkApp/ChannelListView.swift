@@ -11,7 +11,7 @@ struct ChannelListView: View {
     let menu = Bundle.main.decode([MenuSection].self, from: "menu.json")
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             List {
                 ForEach(menu) { section in
                     Section(section.name) {
@@ -21,10 +21,15 @@ struct ChannelListView: View {
                     }
                 }
             }
-            .navigationTitle("Channels")
+            .navigationTitle("Following")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                Button(action: {}) {
+                    Label("Filter", systemImage: "line.3.horizontal.decrease.circle")
+                }
+            }
             .listStyle(.grouped)
         }
-        
     }
     
     func deleteItems() {

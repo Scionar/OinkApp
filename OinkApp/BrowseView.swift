@@ -9,7 +9,24 @@ import SwiftUI
 
 struct BrowseView: View {
     var body: some View {
-        Text("Browse view")
+        NavigationView {
+            ScrollView(.vertical, showsIndicators: false, content: {
+                VStack {
+                    ForEach(1...20, id: \.self) {_ in
+                        PostBox(post: "Today I went to a pizza buffet! 🍕🍕 So awesome and filling.")
+                        Divider()
+                    }
+                }
+                .padding(.top, 20)
+            })
+            .navigationTitle("Browse")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                Button(action: {}) {
+                    Label("Filter", systemImage: "line.3.horizontal.decrease.circle")
+                }
+            }
+        }
     }
 }
 
