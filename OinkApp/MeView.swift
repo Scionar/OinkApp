@@ -40,7 +40,7 @@ struct MeView: View {
                                 .frame(width: getRect().width, height: minY > 0 ? 180 + minY : 180, alignment: .center)
                                 .cornerRadius(0)
 
-                            BlurView()
+                            Blur()
                                 .opacity(blurViewOpacity())
                             
                             // Header title
