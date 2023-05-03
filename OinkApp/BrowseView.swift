@@ -11,9 +11,9 @@ struct BrowseView: View {
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false, content: {
-                VStack {
+                VStack(spacing: 18) {
                     ForEach(1...20, id: \.self) {_ in
-                        PostBox(post: "Today I went to a pizza buffet! 🍕🍕 So awesome and filling.")
+                        PostBox(post: "Today I went to a pizza buffet! 🍕🍕 So awesome and filling.", avatarImage: "pig")
                         Divider()
                     }
                 }

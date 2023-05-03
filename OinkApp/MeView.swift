@@ -159,6 +159,7 @@ struct MeView: View {
                             Divider()
                         }
                     }
+                    .padding(.top, 10)
                     .zIndex(0)
                 }
                 // Move view behind header if it goes > 80.

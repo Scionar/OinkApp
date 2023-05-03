@@ -9,17 +9,21 @@ import SwiftUI
 
 struct PostBox: View {
     var post: String
+    var avatarImage: String?
     var postImage: String?
+    
     
     var body: some View {
         HStack(alignment: .top, spacing: 10, content: {
-            Image("pig")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 55, height: 55)
-                .clipShape(Circle())
+            if let avatar = avatarImage {
+                Image(avatar)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 40, height: 40)
+                    .clipShape(Circle())
+            }
             
-            VStack(alignment: .leading, spacing: 10, content: {
+            VStack(alignment: .leading, spacing: 3, content: {
                 (
                     Text("Piggy ")
                         .fontWeight(.bold)
@@ -43,6 +47,7 @@ struct PostBox: View {
                             .cornerRadius(15)
                     }
                     .frame(height: 250)
+                    .padding(.top, 10)
                 }
             })
         }).frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
