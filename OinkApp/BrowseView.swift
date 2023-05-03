@@ -23,7 +23,7 @@ struct BrowseView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 Button(action: {}) {
-                    Label("Filter", systemImage: "line.3.horizontal.decrease.circle")
+                    Label("Filter", systemImage: "line.3.horizontal.decrease.circle").foregroundColor(.gray)
                 }
             }
         }
