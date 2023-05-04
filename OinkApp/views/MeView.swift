@@ -149,15 +149,6 @@ struct MeView: View {
                     
                     // Posts
                     VStack(spacing: 18) {
-//                        PostBox(post: "Today I went to a pizza buffet! 🍕🍕 So awesome andfilling.", postImage: "veggie-pizza")
-                        
-//                        Divider()
-                        
-//                        ForEach(1...20, id: \.self) {_ in
-//                            PostBox(post: "Today I went to a pizza buffet! 🍕🍕 So awesome andfilling.")
-//                            Divider()
-//                        }
-                        
                         ForEach($posts, id: \.id) {post in
                             PostBox(post: post)
                             Divider()
