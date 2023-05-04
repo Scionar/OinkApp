@@ -67,17 +67,7 @@ struct MeView: View {
                 VStack{
                     // Avatar & edit button
                     HStack {
-                        Image("pig")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 75, height: 75)
-                            .clipShape(Circle())
-                            .padding(5)
-                            .background(colorScheme == .dark ? Color.black : Color.white)
-                            .clipShape(Circle())
-                            .offset(y: offset < 0 ? getOffset() - 20 : -20)
-                            .offset(x: -5)
-                            .scaleEffect(getScale())
+                        Avatar()
 
                         Spacer()
 
@@ -125,23 +115,7 @@ struct MeView: View {
                     GeometryReader{ proxy in
                         let minY = proxy.frame(in: .named("SCROLL")).minY - 50
                         
-                        VStack(spacing: 0) {
-                            ScrollView(.horizontal, showsIndicators: false, content: {
-                                HStack(spacing: 0){
-                                    TabButton(title: "Posts", currentTab: $currentTab, animation: animation)
-    
-                                    TabButton(title: "Media", currentTab: $currentTab, animation: animation)
-    
-                                    TabButton(title: "Likes", currentTab: $currentTab, animation: animation)
-    
-                                    TabButton(title: "Calories", currentTab: $currentTab, animation: animation)
-                                }
-                            })
-    
-                            Divider()
-                        }
-                        .background(colorScheme == .dark ? Color.black : Color.white)
-                        .frame(maxWidth: .infinity, maxHeight: 50)
+                        ProfileTabs(currentTab: $currentTab)
                         .offset(y: minY < 50 ? -(minY - 50) : 0)
                     }
                     .frame(height: 50)
@@ -207,37 +181,17 @@ extension View {
     }
 }
 
-struct TabButton: View {
-    var title: String
-    @Binding var currentTab: String
-    var animation: Namespace.ID
+struct Avatar: View {
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
-        Button(action: {
-            withAnimation {
-                currentTab = title
-            }
-        }, label:  {
-            LazyVStack(spacing: 0) {
-                Text(title)
-                    .fontWeight(.semibold)
-                    .foregroundColor(currentTab == title ? .blue : .gray)
-                    .padding(.horizontal)
-                    .padding(.vertical, 15)
-                    .frame(height: 49)
-                
-                if currentTab == title {
-                    Capsule()
-                        .fill(Color.blue)
-                        .frame(height: 1.2)
-                        .matchedGeometryEffect(id: "TAB", in: animation)
-                } else {
-                    Capsule()
-                        .fill(Color.clear)
-                        .frame(height: 1.2)
-                }
-            }
-            .frame(height: 50)
-        })
+        Image("pig")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: 75, height: 75)
+            .clipShape(Circle())
+            .padding(5)
+            .background(colorScheme == .dark ? Color.black : Color.white)
+            .clipShape(Circle())
     }
 }

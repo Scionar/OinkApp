@@ -51,6 +51,21 @@ extension Post {
         ),
         Post(
             post: "It was a dark and stormy night. Fridge was luring people people out from their beds to fill in the middle of the night"
-        )
+        ),
+        Post(
+            post: "Squeeky"
+        ),
+        Post(
+            post: "Need much more posts for scrolling."
+        ),
+        Post(
+            post: "It was a dark and stormy night. Fridge was luring people people out from their beds to fill in the middle of the night"
+        ),
+        Post(
+            post: "It was a dark and stormy night. Fridge was luring people people out from their beds to fill in the middle of the night"
+        ),
+        Post(
+            post: "It was a dark and stormy night. Fridge was luring people people out from their beds to fill in the middle of the night"
+        ),
     ]
 }
