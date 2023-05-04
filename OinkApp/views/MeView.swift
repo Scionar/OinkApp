@@ -55,9 +55,9 @@ struct MeView: View {
                             .offset(y: headerTitleOffset > 100 ? 0 : -getHeaderTitleOffset())
                             .opacity(headerTitleOffset < 110 ? 1 : 0)
                         }
-                            .clipped()
-                            .frame(height: minY > 0 ? 180 + minY : nil)
-                            .offset(y: minY > 0 ? -minY : -minY < 80 ? 0 : -minY - 80)
+                        .clipped()
+                        .frame(height: minY > 0 ? 180 + minY : nil)
+                        .offset(y: minY > 0 ? -minY : -minY < 80 ? 0 : -minY - 80)
                     )
                 }
                 .frame(height: 180)
@@ -98,6 +98,7 @@ struct MeView: View {
                         
                         Text("Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.")
                     })
+                    .padding(.horizontal)
                     .overlay(
                         GeometryReader{proxy -> Color in
                             let minY = proxy.frame(in: .global).minY
@@ -107,10 +108,9 @@ struct MeView: View {
                             }
                             
                             return Color.clear
-                        }.frame(width: 0, height: 0),
+                        },
                         alignment: .top
                     )
-                    .padding(.horizontal)
                     
                     GeometryReader{ proxy in
                         let minY = proxy.frame(in: .named("SCROLL")).minY - 50
@@ -151,12 +151,6 @@ struct MeView: View {
     func getOffset()->CGFloat{
         let progress = (-offset / 80) * 20
         return progress <= 20 ? progress : 20
-    }
-
-    func getScale()->CGFloat{
-        let progress = -offset / 80
-        let scale = 1.8 - (progress < 1.0 ? progress : 1)
-        return scale < 1 ? scale : 1
     }
 
     func blurViewOpacity()->Double{
