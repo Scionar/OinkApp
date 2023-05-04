@@ -87,14 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E10012A82A00587A000242F4 /* views */ = {
+		E10012A82A00587A000242F4 /* components */ = {
 			isa = PBXGroup;
 			children = (
 				E10012A629FE7753000242F4 /* Blur.swift */,
 				E1F69CCF29FDADF3006E59E2 /* ChannelItemRow.swift */,
 				E10012A92A005943000242F4 /* PostBox.swift */,
 			);
-			path = views;
+			path = components;
 			sourceTree = "<group>";
 		};
 		E10012AB2A024EED000242F4 /* models */ = {
@@ -136,7 +136,7 @@
 			children = (
 				E10012AE2A025559000242F4 /* storages */,
 				E10012AB2A024EED000242F4 /* models */,
-				E10012A82A00587A000242F4 /* views */,
+				E10012A82A00587A000242F4 /* components */,
 				E191328829FD890F0023C57C /* OinkApp.swift */,
 				E1F69CC129FD9D13006E59E2 /* MainView.swift */,
 				E191328C29FD89100023C57C /* Assets.xcassets */,
