@@ -113,6 +113,17 @@
 			path = storages;
 			sourceTree = "<group>";
 		};
+		E12AE7CA2A03BC400044579A /* views */ = {
+			isa = PBXGroup;
+			children = (
+				E1F69CCD29FDAC14006E59E2 /* MeView.swift */,
+				E1F69CCB29FDABF4006E59E2 /* BrowseView.swift */,
+				E1F69CC129FD9D13006E59E2 /* MainView.swift */,
+				E1F69CC329FDA314006E59E2 /* ChannelListView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		E191327C29FD890F0023C57C = {
 			isa = PBXGroup;
 			children = (
@@ -134,19 +145,16 @@
 		E191328729FD890F0023C57C /* OinkApp */ = {
 			isa = PBXGroup;
 			children = (
+				E12AE7CA2A03BC400044579A /* views */,
 				E10012AE2A025559000242F4 /* storages */,
 				E10012AB2A024EED000242F4 /* models */,
 				E10012A82A00587A000242F4 /* components */,
 				E191328829FD890F0023C57C /* OinkApp.swift */,
-				E1F69CC129FD9D13006E59E2 /* MainView.swift */,
 				E191328C29FD89100023C57C /* Assets.xcassets */,
 				E191328E29FD89100023C57C /* Preview Content */,
-				E1F69CC329FDA314006E59E2 /* ChannelListView.swift */,
 				E1F69CC529FDA4C1006E59E2 /* Helper.swift */,
 				E1F69CC729FDA588006E59E2 /* menu.json */,
 				E1F69CC929FDA6B4006E59E2 /* Menu.swift */,
-				E1F69CCB29FDABF4006E59E2 /* BrowseView.swift */,
-				E1F69CCD29FDAC14006E59E2 /* MeView.swift */,
 			);
 			path = OinkApp;
 			sourceTree = "<group>";
