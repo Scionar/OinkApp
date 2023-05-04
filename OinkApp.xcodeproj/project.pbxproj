@@ -10,6 +10,7 @@
 		E10012A729FE7753000242F4 /* Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10012A629FE7753000242F4 /* Blur.swift */; };
 		E10012AA2A005943000242F4 /* PostBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10012A92A005943000242F4 /* PostBox.swift */; };
 		E10012AD2A024F14000242F4 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10012AC2A024F14000242F4 /* Post.swift */; };
+		E10012B02A02557F000242F4 /* PostStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10012AF2A02557F000242F4 /* PostStorage.swift */; };
 		E191328929FD890F0023C57C /* OinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E191328829FD890F0023C57C /* OinkApp.swift */; };
 		E191328D29FD89100023C57C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E191328C29FD89100023C57C /* Assets.xcassets */; };
 		E191329029FD89100023C57C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E191328F29FD89100023C57C /* Preview Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		E10012A629FE7753000242F4 /* Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blur.swift; sourceTree = "<group>"; };
 		E10012A92A005943000242F4 /* PostBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBox.swift; sourceTree = "<group>"; };
 		E10012AC2A024F14000242F4 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		E10012AF2A02557F000242F4 /* PostStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStorage.swift; sourceTree = "<group>"; };
 		E191328529FD890F0023C57C /* OinkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OinkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E191328829FD890F0023C57C /* OinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OinkApp.swift; sourceTree = "<group>"; };
 		E191328C29FD89100023C57C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +105,14 @@
 			path = models;
 			sourceTree = "<group>";
 		};
+		E10012AE2A025559000242F4 /* storages */ = {
+			isa = PBXGroup;
+			children = (
+				E10012AF2A02557F000242F4 /* PostStorage.swift */,
+			);
+			path = storages;
+			sourceTree = "<group>";
+		};
 		E191327C29FD890F0023C57C = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +134,7 @@
 		E191328729FD890F0023C57C /* OinkApp */ = {
 			isa = PBXGroup;
 			children = (
+				E10012AE2A025559000242F4 /* storages */,
 				E10012AB2A024EED000242F4 /* models */,
 				E10012A82A00587A000242F4 /* views */,
 				E191328829FD890F0023C57C /* OinkApp.swift */,
@@ -286,6 +297,7 @@
 				E1F69CCC29FDABF4006E59E2 /* BrowseView.swift in Sources */,
 				E1F69CCE29FDAC14006E59E2 /* MeView.swift in Sources */,
 				E10012A729FE7753000242F4 /* Blur.swift in Sources */,
+				E10012B02A02557F000242F4 /* PostStorage.swift in Sources */,
 				E1F69CC629FDA4C1006E59E2 /* Helper.swift in Sources */,
 				E1F69CC229FD9D13006E59E2 /* MainView.swift in Sources */,
 				E191328929FD890F0023C57C /* OinkApp.swift in Sources */,

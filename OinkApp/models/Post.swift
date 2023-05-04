@@ -37,7 +37,7 @@ extension Post {
         ),
         Post(
             avatar: "pig",
-            post: "It was a dark and storymy night. Fridge was luring people people out from their beds to fill in the middle of the night"
+            post: "It was a dark and stormy night. Fridge was luring people people out from their beds to fill in the middle of the night"
         )
     ]
     
@@ -50,7 +50,7 @@ extension Post {
             postImage: "veggie-pizza"
         ),
         Post(
-            post: "It was a dark and storymy night. Fridge was luring people people out from their beds to fill in the middle of the night"
+            post: "It was a dark and stormy night. Fridge was luring people people out from their beds to fill in the middle of the night"
         )
     ]
 }

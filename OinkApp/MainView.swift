@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct MainView: View {
+    @StateObject private var store = PostStorage()
+
     var body: some View {
         GeometryReader {
             let safeArea = $0.safeAreaInsets
 
             TabView() {
-                BrowseView().tabItem {
+                BrowseView(posts: $store.browsePosts).tabItem {
                     Label("Browse", systemImage: "globe.europe.africa.fill")
                 }
                 ChannelListView()
@@ -21,11 +23,20 @@ struct MainView: View {
                     .tabItem {
                         Label("Following", systemImage: "person.2.fill")
                     }
-                MeView(safeArea: safeArea).tabItem {
+                MeView(safeArea: safeArea, posts: $store.posts).tabItem {
                     Label("Profile", systemImage: "person.crop.circle.fill")
                 }
             }
             .tabViewStyle(DefaultTabViewStyle())
+            .task {
+                do {
+                    try await store.load()
+                }
+                catch {
+                    fatalError(error.localizedDescription)
+                }
+                
+            }
         }
     }
 }

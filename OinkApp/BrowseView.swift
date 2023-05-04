@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct BrowseView: View {
+    @Binding var posts: [Post]
+
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false, content: {
                 VStack(spacing: 18) {
-                    ForEach(1...20, id: \.self) {_ in
-                        PostBox(post: "Today I went to a pizza buffet! 🍕🍕 So awesome and filling.", avatarImage: "pig")
+                    ForEach($posts, id: \.id) {post in
+                        PostBox(post: post, avatarImage: "pig")
                         Divider()
                     }
                 }
@@ -32,6 +34,6 @@ struct BrowseView: View {
 
 struct BrowseView_Previews: PreviewProvider {
     static var previews: some View {
-        BrowseView()
+        BrowseView(posts: .constant(Post.sampleFollowingFeedData))
     }
 }

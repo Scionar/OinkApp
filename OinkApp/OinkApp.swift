@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct OinkChatApp: App {
+    @StateObject private var store = PostStorage()
+
     var body: some Scene {
         WindowGroup {
             MainView()

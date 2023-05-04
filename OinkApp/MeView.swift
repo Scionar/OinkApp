@@ -8,18 +8,17 @@
 import SwiftUI
 
 struct MeView: View {
+    var safeArea: EdgeInsets
+    @Binding var posts: [Post]
     
     @Environment(\.colorScheme) var colorScheme
     
     @State var offset: CGFloat = 0
     @State var tabBarOffset: CGFloat = 0
     @State var currentTab = "Posts"
-    
-    @Namespace var animation
-    
     @State var headerTitleOffset: CGFloat = 0;
     
-    var safeArea: EdgeInsets
+    @Namespace var animation
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false, content: {
@@ -150,12 +149,17 @@ struct MeView: View {
                     
                     // Posts
                     VStack(spacing: 18) {
-                        PostBox(post: "Today I went to a pizza buffet! 🍕🍕 So awesome andfilling.", postImage: "veggie-pizza")
+//                        PostBox(post: "Today I went to a pizza buffet! 🍕🍕 So awesome andfilling.", postImage: "veggie-pizza")
                         
-                        Divider()
+//                        Divider()
                         
-                        ForEach(1...20, id: \.self) {_ in
-                            PostBox(post: "Today I went to a pizza buffet! 🍕🍕 So awesome andfilling.")
+//                        ForEach(1...20, id: \.self) {_ in
+//                            PostBox(post: "Today I went to a pizza buffet! 🍕🍕 So awesome andfilling.")
+//                            Divider()
+//                        }
+                        
+                        ForEach($posts, id: \.id) {post in
+                            PostBox(post: post)
                             Divider()
                         }
                     }
@@ -201,7 +205,7 @@ struct MeView_Previews: PreviewProvider {
         GeometryReader {
             let safeArea = $0.safeAreaInsets
             
-            MeView(safeArea: safeArea)
+            MeView(safeArea: safeArea, posts: .constant(Post.sampleProfileFeedData))
         }
     }
 }

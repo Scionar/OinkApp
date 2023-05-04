@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct PostBox: View {
-    var post: String
+    @Binding var post: Post
+//    var post: String
     var avatarImage: String?
     var postImage: String?
     
@@ -35,8 +36,10 @@ struct PostBox: View {
                         .foregroundColor(.gray)
                 )
                 
-                Text(post)
-                    .frame(maxHeight: 100, alignment: .top)
+                if let text = post.post {
+                    Text(text)
+                        .frame(maxHeight: 100, alignment: .top)
+                }
                 
                 if let image = postImage {
                     GeometryReader{proxy in
@@ -57,6 +60,6 @@ struct PostBox: View {
 
 struct PostBox_Previews: PreviewProvider {
     static var previews: some View {
-        PostBox(post: "Post content!")
+        PostBox(post: .constant(Post.sampleProfileFeedData[0]))
     }
 }
