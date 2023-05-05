@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FloatingButtonContainer: View {
     let action: () -> Void
-    let icon: String
+    
     var body: some View {
         VStack {
             Spacer()
@@ -17,7 +17,7 @@ struct FloatingButtonContainer: View {
                 Spacer()
                 Button(action: action) {}
                 .buttonStyle(FloatingButton())
-                .offset(x: -25, y: 10)
+                .offset(x: -15, y: -75)
             }
         }
     }
@@ -26,14 +26,16 @@ struct FloatingButtonContainer: View {
 struct FloatingButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         HStack {
-            Image(systemName: "plus").resizable().frame(width: 20, height: 20)
+            Image(systemName: "plus")
+                .resizable()
+                .frame(width: 15, height: 15)
             configuration.label
         }
-            .frame(width: 60, height: 60, alignment: .center)
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .clipShape(Circle())
-            .shadow(color: Color.black.opacity(0.3), radius: 3, x: 0, y:0)
+        .frame(width: 55, height: 55, alignment: .center)
+        .background(Color.blue)
+        .foregroundColor(.white)
+        .clipShape(Circle())
+        .shadow(color: Color.black.opacity(0.3), radius: 3, x: 0, y:0)
     }
 }
 
@@ -42,7 +44,7 @@ struct FloatButton_Previews: PreviewProvider {
         ZStack {
             FloatingButtonContainer(action: {
                 print("Button pressed!")
-            }, icon: "plus")
+            })
         }
     }
 }

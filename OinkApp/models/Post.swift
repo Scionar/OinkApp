@@ -9,12 +9,12 @@ import Foundation
 
 struct Post: Identifiable, Codable {
     let id: UUID
-    let date: Date
-    let avatar: String?
-    let post: String?
-    let postImage: String?
+    var date: Date
+    var avatar: String?
+    var post: String
+    var postImage: String?
     
-    init(id: UUID = UUID(), date: Date = Date(), avatar: String? = nil, post: String?, postImage: String? = nil) {
+    init(id: UUID = UUID(), date: Date = Date(), avatar: String? = nil, post: String = "", postImage: String? = nil) {
         self.id = id
         self.date = date
         self.avatar = avatar
@@ -22,6 +22,12 @@ struct Post: Identifiable, Codable {
         self.postImage = postImage
     }
 
+}
+
+extension Post {
+    static var emptyPost: Post {
+        Post(post: "")
+    }
 }
 
 extension Post {

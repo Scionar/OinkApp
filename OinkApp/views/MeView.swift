@@ -24,13 +24,13 @@ struct MeView: View {
         ScrollView(.vertical, showsIndicators: false, content: {
             VStack(spacing: 15) {
                 GeometryReader{proxy -> AnyView in
-
+                    
                     let minY = proxy.frame(in: .global).minY
-
+                    
                     DispatchQueue.main.async {
                         self.offset = minY
                     }
-
+                    
                     return AnyView(
                         ZStack{
                             Image("super-sundae")
@@ -38,7 +38,7 @@ struct MeView: View {
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: getRect().width, height: minY > 0 ? 180 + minY : 180, alignment: .center)
                                 .cornerRadius(0)
-
+                            
                             Blur()
                                 .opacity(blurViewOpacity())
                             
@@ -55,22 +55,22 @@ struct MeView: View {
                             .offset(y: headerTitleOffset > 100 ? 0 : -getHeaderTitleOffset())
                             .opacity(headerTitleOffset < 110 ? 1 : 0)
                         }
-                        .clipped()
-                        .frame(height: minY > 0 ? 180 + minY : nil)
-                        .offset(y: minY > 0 ? -minY : -minY < 80 ? 0 : -minY - 80)
+                            .clipped()
+                            .frame(height: minY > 0 ? 180 + minY : nil)
+                            .offset(y: minY > 0 ? -minY : -minY < 80 ? 0 : -minY - 80)
                     )
                 }
                 .frame(height: 180)
                 .coordinateSpace(name: "SCROLL")
                 .zIndex(1)
-
+                
                 VStack{
                     // Avatar & edit button
                     HStack {
                         Avatar()
-
+                        
                         Spacer()
-
+                        
                         Button(action: {}, label: {
                             Text("Edit Profile")
                                 .foregroundColor(.blue)
@@ -116,7 +116,7 @@ struct MeView: View {
                         let minY = proxy.frame(in: .named("SCROLL")).minY - 50
                         
                         ProfileTabs(currentTab: $currentTab)
-                        .offset(y: minY < 50 ? -(minY - 50) : 0)
+                            .offset(y: minY < 50 ? -(minY - 50) : 0)
                     }
                     .frame(height: 50)
                     .zIndex(1)
@@ -135,7 +135,7 @@ struct MeView: View {
                 .zIndex(-offset > 80 ? 0 : 1)
                 
                 
-
+                
             }
         })
         .ignoresSafeArea(.all, edges: .top)
