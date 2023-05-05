@@ -36,8 +36,8 @@ struct PostBox: View {
                         .foregroundColor(.gray)
                 )
                 
-                if let text = post.post {
-                    Text(text)
+                if post.post.count > 0 {
+                    Text(post.post)
                         .frame(maxHeight: 100, alignment: .top)
                 }
                 
