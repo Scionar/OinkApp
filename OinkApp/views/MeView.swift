@@ -123,8 +123,10 @@ struct MeView: View {
                     
                     // Posts
                     VStack(spacing: 18) {
-                        ForEach($posts, id: \.id) {post in
-                            PostBox(post: post)
+                        ForEach($posts.indices, id: \.self) { index in
+                            PostBox(post: $posts[index], deleteAction: {
+                                posts.remove(atOffsets: IndexSet([index]))
+                            })
                             Divider()
                         }
                     }

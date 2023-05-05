@@ -15,7 +15,7 @@ struct BrowseView: View {
             ScrollView(.vertical, showsIndicators: false, content: {
                 VStack(spacing: 18) {
                     ForEach($posts, id: \.id) {post in
-                        PostBox(post: post, avatarImage: "pig")
+                        PostBox(post: post, avatarImage: "pig", deleteAction: { print("Delete action") })
                         Divider()
                     }
                 }

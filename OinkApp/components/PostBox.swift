@@ -12,6 +12,8 @@ struct PostBox: View {
 //    var post: String
     var avatarImage: String?
     var postImage: String?
+    var deleteAction: () -> Void
+    
     
     
     var body: some View {
@@ -25,16 +27,28 @@ struct PostBox: View {
             }
             
             VStack(alignment: .leading, spacing: 3, content: {
-                (
-                    Text("Piggy ")
-                        .fontWeight(.bold)
-                        .foregroundColor(.primary)
+                HStack {
+                    (
+                        Text("Piggy ")
+                            .fontWeight(.bold)
+                            .foregroundColor(.primary)
+                        
+                        +
+                        
+                        Text("@piggy5000")
+                            .foregroundColor(.gray)
+                    )
                     
-                    +
+                    Spacer()
                     
-                    Text("@piggy5000")
-                        .foregroundColor(.gray)
-                )
+                    Menu(content: {
+                        Button("Delete post", action: {
+                            deleteAction()
+                        })
+                    }, label: {
+                        Image(systemName: "ellipsis").foregroundColor(.gray)
+                    })
+                }
                 
                 if post.post.count > 0 {
                     Text(post.post)
@@ -60,6 +74,6 @@ struct PostBox: View {
 
 struct PostBox_Previews: PreviewProvider {
     static var previews: some View {
-        PostBox(post: .constant(Post.sampleProfileFeedData[0]))
+        PostBox(post: .constant(Post.sampleProfileFeedData[0]), deleteAction: { print("Delete action") })
     }
 }
