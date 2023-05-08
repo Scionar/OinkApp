@@ -1,6 +1,6 @@
 //
 //  MeView.swift
-//  OinkChat
+//  OinkApp
 //
 //  Created by Joona Viertola on 29.4.2023.
 //
@@ -25,39 +25,9 @@ struct MeView: View {
             
             
             VStack(spacing: 15) {
-                GeometryReader{proxy -> AnyView in
-                    return AnyView(
-                        ZStack{
-                            Image("super-sundae")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: getRect().width, height: self.offset > 0 ? 180 + self.offset : 180, alignment: .center)
-                                .cornerRadius(0)
-
-                            Blur()
-                                .opacity(blurViewOpacity())
-
-                            // Header title
-                            VStack(spacing: 5) {
-                                Text("Piggy")
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-
-                                Text("150 Posts")
-                                    .foregroundColor(.white)
-                            }
-                            .offset(y: 120)
-                            .offset(y: headerTitleOffset > 100 ? 0 : -getHeaderTitleOffset())
-                            .opacity(headerTitleOffset < 110 ? 1 : 0)
-                        }
-                        .clipped()
-                        .frame(height: self.offset > 0 ? 180 + self.offset : nil)
-                        .offset(y: self.offset > 0 ? -self.offset : -self.offset < 80 ? 0 : -self.offset - 80)
-                    )
-                }
-                .frame(height: 180)
-                .coordinateSpace(name: "SCROLL")
-                .zIndex(1)
+                StickyHeader(minHeight: 180, offset: self.offset)
+                    .coordinateSpace(name: "SCROLL")
+                    .zIndex(1)
                 
                 VStack{
                     // Avatar & edit button
@@ -138,8 +108,6 @@ struct MeView: View {
                 GeometryReader{proxy -> Color in
                     let minY = proxy.frame(in: .global).minY
 
-                    print(minY)
-
                     DispatchQueue.main.async {
                         self.offset = minY
                     }
@@ -150,23 +118,6 @@ struct MeView: View {
             )
         })
         .ignoresSafeArea(.all, edges: .top)
-    }
-    
-    func getHeaderTitleOffset()->CGFloat {
-        let progress = 20 / headerTitleOffset
-        let offset = 60 * (progress > 0 && progress <= 1 ? progress : 1)
-        return offset
-    }
-
-    // Profile shrinking effect
-    func getOffset()->CGFloat{
-        let progress = (-offset / 80) * 20
-        return progress <= 20 ? progress : 20
-    }
-
-    func blurViewOpacity()->Double{
-        let progress = -(offset + 80) / 150
-        return Double(-offset > 80 ? progress : 0)
     }
 }
 
