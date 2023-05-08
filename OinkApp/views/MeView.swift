@@ -22,32 +22,27 @@ struct MeView: View {
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false, content: {
+            
+            
             VStack(spacing: 15) {
                 GeometryReader{proxy -> AnyView in
-                    
-                    let minY = proxy.frame(in: .global).minY
-                    
-                    DispatchQueue.main.async {
-                        self.offset = minY
-                    }
-                    
                     return AnyView(
                         ZStack{
                             Image("super-sundae")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: getRect().width, height: minY > 0 ? 180 + minY : 180, alignment: .center)
+                                .frame(width: getRect().width, height: self.offset > 0 ? 180 + self.offset : 180, alignment: .center)
                                 .cornerRadius(0)
-                            
+
                             Blur()
                                 .opacity(blurViewOpacity())
-                            
+
                             // Header title
                             VStack(spacing: 5) {
                                 Text("Piggy")
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
-                                
+
                                 Text("150 Posts")
                                     .foregroundColor(.white)
                             }
@@ -55,9 +50,9 @@ struct MeView: View {
                             .offset(y: headerTitleOffset > 100 ? 0 : -getHeaderTitleOffset())
                             .opacity(headerTitleOffset < 110 ? 1 : 0)
                         }
-                            .clipped()
-                            .frame(height: minY > 0 ? 180 + minY : nil)
-                            .offset(y: minY > 0 ? -minY : -minY < 80 ? 0 : -minY - 80)
+                        .clipped()
+                        .frame(height: self.offset > 0 ? 180 + self.offset : nil)
+                        .offset(y: self.offset > 0 ? -self.offset : -self.offset < 80 ? 0 : -self.offset - 80)
                     )
                 }
                 .frame(height: 180)
@@ -139,6 +134,20 @@ struct MeView: View {
                 
                 
             }
+            .overlay(
+                GeometryReader{proxy -> Color in
+                    let minY = proxy.frame(in: .global).minY
+
+                    print(minY)
+
+                    DispatchQueue.main.async {
+                        self.offset = minY
+                    }
+
+                    return Color.clear
+                },
+                alignment: .top
+            )
         })
         .ignoresSafeArea(.all, edges: .top)
     }
